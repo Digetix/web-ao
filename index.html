@@ -5,11 +5,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<script src="app.js" defer></script>
+	<script src="numberToString.js" defer></script>
 	<title>Печать документов</title>
 </head>
 <body>
 	<div class="wrapper">
-		<h1>Печать документов "Азбука Окон" - 25.10.2022 г.</h1>	
+		<h1>Печать документов "Азбука Окон"</h1>
 		<ul>
 			<li>Договор и Акт</li>
 			<li>Счет</li>
@@ -19,14 +21,14 @@
 		<div class="top__order">
 			<input type="text" placeholder="Договор №">
 			<span>от</span>
-			<input type="date" name="" id="calendar">
+			<input type="date" id="myDate">
 		</div>
 		<input type="text" id="textFIO" placeholder="ФИО">
 		<input type="text" id="textAdress" placeholder="Адрес" maxlength="15">
 		<input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="textTel" placeholder="Номер телефона" maxlength="16">
 		<br>
-		<input type="text" placeholder="Сумма, грн" maxlength="6">
-		<p>[сумма прописью]</p>
+		<input type="text" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'str')">
+		<div id="str">[сумма прописью]</div>
 		<br>
 		<span>Товар:</span>
 		<select name="select-tovar">
@@ -88,5 +90,6 @@
 			</div>
 
 	</div>
+
 </body>
 </html>
