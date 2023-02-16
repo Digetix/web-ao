@@ -6,8 +6,6 @@
 body {
 	display: flex;
 	height: 100vh;
-	color: white;
-	background: #1E1E1E;
 }
 
 h1 {
@@ -29,10 +27,8 @@ h1 {
   border: 1px solid #202020;
   padding: 0.4em 1em;
   outline: none;
-	background: #333333;
 	margin: 5px;
 	border-radius: 5px;
-	color: white;
 }
 
 .wrapper input::placeholder{
