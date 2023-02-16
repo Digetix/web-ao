@@ -4,12 +4,12 @@ var rub, kop;
 var litera = sotny = desatky = edinicy = minus = "";
 var k = 0, i, j;
 N = ["", "один", "два", "три", "чотири", "п'ять", "шiсть", "сiм", "вiсiм", "дев'ять",
-    "", "одинадцять", "дванадцять", "тринадцать", "чотирнадцять", "п'ятнадцять", "шiстнадцять", "семнадцать", "восемнадцать", "девятнадцать",
-    "", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто",
-    "", "сто", "двести", "триста", "четыреста", "пятьсот", "шестьсот", "семьсот", "восемьсот", "девятьсот",
-    "тысяч", "тысяча", "тысячи", "тысячи", "тысячи", "тысяч", "тысяч", "тысяч", "тысяч", "тысяч",
-    "миллионов", "миллион", "миллиона", "миллиона", "миллиона", "миллионов", "миллионов", "миллионов", "миллионов", "миллионов",
-    "миллиардов", "миллиард", "миллиарда", "миллиарда", "миллиарда", "миллиардов", "миллиардов", "миллиардов", "миллиардов", "миллиардов"];
+    "", "одинадцять", "дванадцять", "тринадцать", "чотирнадцять", "п'ятнадцять", "шiстнадцять", "сiмнадцять", "вiсiмнадцять", "дев'ятнадцять",
+    "", "десять", "двадцять", "тридцять", "сорок", "п'ятдесят", "шiстдесят", "сiмдесят", "вiсiмдесят", "дев'яносто",
+    "", "сто", "двiстi", "триста", "чотириста", "п'ятсот", "шiстсот", "сiмсот", "вiсiмсот", "дев'ятсот",
+    "тисяч", "тисяча", "тисячi", "тисячi", "тисячi", "тисяч", "тисяч", "тисяч", "тисяч", "тисяч",
+    "мiльйонiв", "мiльйон", "мiльйона", "мiльйона", "мiльйона", "мiльйонiв", "мiльйонiв", "мiльйонiв", "мiльйонiв", "мiльйонiв",
+    "мільярдів", "мільярд", "мільярда", "мільярда", "мільярда", "мільярдів", "мільярдів", "мільярдів", "мільярдів", "мільярдів"];
 var M = new Array(10);
 for (j = 0; j < 10; ++j)
     M[j] = new Array(N.length);
@@ -18,11 +18,13 @@ for (i = 0; i < N.length; i++)
         M[j][i] = N[k++]
 var R = new Array("гривень", "гривня", "гривнi", "гривнi", "гривнi", "гривень", "гривень", "гривень", "гривень", "гривень");
 var K = new Array("копiйок", "копiйка", "копiйки", "копiйки", "копiйки", "копiйок", "копiйок", "копiйок", "копiйок", "копiйок");
+
 function num2str(money, target) {
     rub = "", kop = "";
     money = money.replace(",", ".");
+
     if (isNaN(money)) {
-        document.getElementById(target).innerHTML = "Не числовое значение";
+        document.getElementById(target).innerHTML = "Не числове значення";
         return
     }
     if (money.substr(0, 1) == "-") {
@@ -38,15 +40,15 @@ function num2str(money, target) {
     }
     else rub = money;
     if (rub.length > 12) {
-        document.getElementById(target).innerHTML = "Слишком большое число";
+        document.getElementById(target).innerHTML = "Занадто велике число";
         return
     }
     ru = propis(price = rub, R);
     ko = propis(price = kop, K);
     ko != "" ? res = ru + " " + ko : res = ru;
-    ru == "Ноль " + R[0] && ko != "" ? res = ko : 0;
-    kop == 0 ? res += " ноль " + K[0] : 0;
-    document.getElementById(target).innerHTML = (minus + res).substr(0, 1).toUpperCase() + (minus + res).substr(1);
+    ru == "Нуль " + R[0] && ko != "" ? res = ko : 0;
+    kop == 0 ? res += " нуль " + K[0] : 0;
+    document.getElementById(target).innerHTML = minus + res;
 }
 function propis(price, D) {
     litera = "";
@@ -59,7 +61,7 @@ function propis(price, D) {
         else {
             edinicy = M[n(i + 1, 1)][0];
             (edinicy == "один" && (i == 3 || D == K)) ? edinicy = "одна" : 0;
-            (edinicy == "два" && (i == 3 || D == K)) ? edinicy = "две" : 0;
+            (edinicy == "два" && (i == 3 || D == K)) ? edinicy = "двi" : 0;
             i == 0 && edinicy != "" ? 0 : edinicy += " " + M[n(i + 1, 1)][i / 3 + 3];
             edinicy == " " ? edinicy = "" : (edinicy == " " + M[n(i + 1, 1)][i / 3 + 3]) ? 0 : edinicy = " " + edinicy;
             i == 0 ? edinicy += " " + D[n(i + 1, 1)] : 0;
@@ -69,7 +71,7 @@ function propis(price, D) {
         if (price.substr(price.length - i - 3, 3) == "000" && edinicy == " " + M[0][i / 3 + 3]) edinicy = "";
         litera = sotny + desatky + edinicy + litera;
     }
-    if (litera == " " + R[0]) return "ноль" + litera;
+    if (litera == " " + R[0]) return "нуль" + litera;
     else return litera.substr(1);
 }
 function n(start, len) {
