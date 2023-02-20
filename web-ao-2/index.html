@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	<script src="app.js" defer></script>
+	<script src="numberToString.js" defer></script>
+	<title>Печать документов</title>
+</head>
+<body>
+	<div class="container">
+		<div class="main-title">Печать документов "Азбука Окон"</div>
+		<div class="content">
+			<input type="radio" name="indicator" checked id="contract">
+			<input type="radio" name="indicator" id="invoice">
+			<input type="radio" name="indicator" id="rate">
+			<input type="radio" name="indicator" id="business">
+			<div class="list">
+				<label for="contract" class="contract">
+					<i class="fa fa-home"></i>
+					<span class="topic">Договор и Акт</span>
+				</label>
+				<label for="invoice" class="invoice">
+					<i class="fas fa-blog"></i>
+					<span class="topic">Счет</span>
+				</label>
+				<label for="rate" class="rate">
+					<i class="far fa-envelope"></i>
+					<span class="topic">Расходная</span>
+				</label>
+				<label for="business" class="business">
+					<i class="far fa-user"></i>
+					<span class="topic">Договор (2)</span>
+				</label>
+				<div class="indicator">
+				</div>
+			</div>
+			<div class="text-content">
+				<div class="contract text">
+					<input type="text" name="zakaz" id="">
+					<label for="calendar">от</label>
+					<input type="date" name="calendar" id="">
+					<br>
+					<input type="button" value="Печать">
+				</div>
+				<div class="invoice text">
+					<p>Minus vel consequatur, quae delectus ipsa ut architecto totam officia, laborum repudiandae eius unde eligendi atque ipsam.</p>
+				</div>
+				<div class="rate text">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. .</p>
+				</div>
+				<div class="business text">
+					<p>Laborum repudiandae eius unde eligendi atque ipsam.</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>
