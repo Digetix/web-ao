@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #dad3f8;
+}
+
+.container {
+	max-width: 950px;
+	width: 100%;
+	margin: 0 20px;
+	background: #fff;
+	padding: 40px 40px 50px 40px;
+	border-radius: 12px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container .main-title {
+	font-size: 30px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.container .content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.container .content .list{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 25%;
+	margin-right: 50px;
+}
+
+.content .list label {
+	height: 60px;
+	border-radius: 12px;
+	line-height: 60px;
+	font-size: 19px;
+	font-weight: 400;
+	cursor: pointer;
+	padding-left: 25px;
+	color: #333;
+	z-index: 12;
+	transition: all 0.4s ease;
+}
+
+.content .list label:hover {
+	color: #6d50e2;
+}
+
+#contract:checked ~ .list .contract,
+#invoice:checked ~ .list .invoice,
+#rate:checked ~ .list .rate,
+#business:checked ~ .list .business {
+	color: #fff;
+}
+
+.container .indicator {
+	position: absolute;
+	height: 60px;
+	width: 100%;
+	background: #6d50e2;
+	top: 0;
+	left: 0;
+	border-radius: 12px;
+	transition: all 0.4s ease;
+}
+
+#contract:checked ~ .list .indicator {
+	top: 0;
+}
+
+#invoice:checked ~ .list .indicator {
+	top: 60px;
+}
+
+#rate:checked ~ .list .indicator {
+	top: 120px;
+}
+
+#business:checked ~ .list .indicator {
+	top: 180px;
+}
+
+.container input[type="radio"] {
+	display: none;
+}
+
+.container .content .text-content {
+	width: 80%;
+	height: 100%;
+}
+
+.content .text-content .text {
+	display: none;
+}
+
+.content .text-content .contract {
+	display: block;
+}
+
+#contract:checked ~ .text-content .contract,
+#invoice:checked ~ .text-content .invoice,
+#rate:checked ~ .text-content .rate,
+#business:checked ~ .text-content .business {
+	display: block;
+}
+
+#invoice:checked ~ .text-content .contract,
+#rate:checked ~ .text-content .contract,
+#business:checked ~ .text-content .contract {
+	display: none;
+}
+.content .text-content p {
+	text-align: justify;
+}
+
+.content .text-content .title {
+	font-size: 22px;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
