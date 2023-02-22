@@ -20,7 +20,7 @@
 			<input type="radio" name="indicator" id="business">
 			<div class="list">
 				<label for="contract" class="contract">
-					<i class="fas fa-blog"></i>
+					<i class="fas fa-home"></i>
 					<span class="topic">Договор и Акт</span>
 				</label>
 				<label for="invoice" class="invoice">
@@ -40,15 +40,32 @@
 			</div>
 			<div class="text-content">
 				<div class="contract text">
-					<input type="text" placeholder="Номер договора">
+					<input type="text" id="contract-text" maxlength="10" placeholder="Номер договора" autofocus>
+
 					<label for="calendar">от</label>
 					<input type="date" name="calendar" id="myDate">
-					<input type="text" id="client" placeholder="ФИО">
-					<input type="text" id="adress" placeholder="Адрес">
-					<input type="text" id="telephone" placeholder="Номер телефона">
-					<input type="text" id="price" placeholder="Сумма, грн">
-					<p class="price-words">[сумма прописью]</p>
-					<input type="button" value="Печать">
+
+					<input type="text" id="client" placeholder="ФИО" maxlength="50">
+
+					<input type="text" id="adress" placeholder="Адрес" maxlength="50">
+
+					<input type="text" id="telephone" placeholder="Номер телефона" maxlength="30">
+
+					<input type="text" id="price" placeholder="Сумма, грн" maxlength="9" onKeyUp="num2str(this.value, 'price-words')">
+					<p id="price-words">[сумма прописью]</p>
+					
+					<div class="group">
+						<select id="product">
+							<option value="value1" selected>Вiкна ПВХ</option>
+							<option value="value2">Ролети</option>
+						</select>
+
+						<label id="term-label" for="term">Срок</label>
+						<input type="text" id="term" value="5" maxlength="2">
+						<span>рабочих дней</span>
+					</div>				
+
+					<button>Печать</button>
 				</div>
 				<div class="invoice text">
 					<p>Minus vel consequatur, quae delectus ipsa ut architecto totam officia, laborum repudiandae eius unde eligendi atque ipsam.</p>
