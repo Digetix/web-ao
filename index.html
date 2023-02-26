@@ -29,7 +29,7 @@
 				</label>
 				<label for="rate" class="rate">
 					<i class="far fa-envelope"></i>
-					<span class="topic">Расходная</span>
+					<span class="topic">Накладная</span>
 				</label>
 				<label for="business" class="business">
 					<i class="far fa-user"></i>
@@ -43,7 +43,7 @@
 					<input type="text" id="contract-text" maxlength="10" placeholder="Номер договора" autofocus>
 
 					<label for="calendar">от</label>
-					<input type="date" name="calendar" id="myDate">
+					<input type="date" class="input-date" id="myDate">
 
 					<input type="text" id="client" placeholder="ФИО" maxlength="50">
 
@@ -51,21 +51,51 @@
 
 					<input type="text" id="telephone" placeholder="Номер телефона" maxlength="30">
 
-					<input type="text" id="price" placeholder="Сумма, грн" maxlength="9" onKeyUp="num2str(this.value, 'price-words')">
-					<p id="price-words">[сумма прописью]</p>
+					<input type="text" id="price" placeholder="Сумма, грн" maxlength="7" onKeyUp="num2str(this.value, 'price-words')">
+					<p class="price-words">[сумма прописью]</p>
 					
 					<div class="group">
-						<select id="product">
+						<select class="select-items" id="product">
 							<option value="value1" selected>Вiкна ПВХ</option>
 							<option value="value2">Ролети</option>
 						</select>
 
-						<label id="term-label" for="term">Срок</label>
-						<input type="text" id="term" value="5" maxlength="2">
+						<label class="term-label" for="term">Срок</label>
+						<input type="text" class="term" value="5" maxlength="2">
 						<span>рабочих дней</span>
-					</div>				
+					</div>
 
-					<button>Печать</button>
+					<select class="select-items" id="terms-of-payment">
+						<option value="value1" selected>100% оплата</option>
+						<option value="value2">предоплата</option>
+					</select>
+					
+					<div id="term-details">
+						<input type="text" id="term-details__pay" value="80">
+						<span>%</span>
+						<label for="input-date">внести</label>
+						<input type="date" class="input-date" id="date-pay">
+					</div>
+
+					<div class="buttons">
+						<div class="buttons-contract">
+							<button>Сохранить Договор</button>
+							<select class="select-copies">
+								<option value="2" selected>2 копии</option>
+								<option value="1">1 копия</option>
+							</select>
+							<button>Договор</button>
+						</div>
+						<div class="buttons-act">
+							<button>Сохранить Акт</button>
+							<select class="select-copies">
+								<option value="2" selected>2 копии</option>
+								<option value="1">1 копия</option>
+							</select>
+							<button>Акт</button>
+						</div>
+					</div>
+					
 				</div>
 				<div class="invoice text">
 					<p>Minus vel consequatur, quae delectus ipsa ut architecto totam officia, laborum repudiandae eius unde eligendi atque ipsam.</p>
