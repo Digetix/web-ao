@@ -20,6 +20,7 @@ select.addEventListener('change', function handleChange(event) {
 	} else {
 		termDetails.style.visibility = "visible";	
 		datePay.value = year+'-'+month+'-'+dayOfDate;
+	}
 });
 
 
