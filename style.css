@@ -13,12 +13,15 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #dad3f8;
+	/* background-color: #8BC6EC;
+	background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
+	background-color: #121212;
+	;
 }
 
 .container {
-	width: 750px;
-	height: 550px;
+	width: 800px;
+	height: 580px;
 	margin: 15px;
 	background: #fff;
 	padding: 20px;
@@ -41,15 +44,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	width: 35%;
+	width: 30%;
 	margin-right: 25px;
 }
 
 .content .list label {
-	height: 50px;
+	height: 60px;
 	border-radius: 12px;
 	line-height: 60px;
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: 400;
 	cursor: pointer;
 	padding-left: 25px;
@@ -59,7 +62,7 @@ body {
 }
 
 .content .list label:hover {
-	color: #6d50e2;
+	color: #008AD8;
 }
 
 #contract:checked ~ .list .contract,
@@ -73,7 +76,7 @@ body {
 	position: absolute;
 	height: 60px;
 	width: 100%;
-	background: #6d50e2;
+	background: #008AD8;
 	top: 0;
 	left: 0;
 	border-radius: 12px;
@@ -85,15 +88,15 @@ body {
 }
 
 #invoice:checked ~ .list .indicator {
-	top: 50px;
+	top: 60px;
 }
 
 #rate:checked ~ .list .indicator {
-	top: 100px;
+	top: 120px;
 }
 
 #business:checked ~ .list .indicator {
-	top: 150px;
+	top: 180px;
 }
 
 .container input[type="radio"] {
@@ -101,7 +104,7 @@ body {
 }
 
 .container .content .text-content {
-	width: 80%;
+	width: 90%;
 	height: 100%;
 }
 
@@ -135,26 +138,9 @@ body {
 	margin-bottom: 10px;
 }
 
-#client,
-#adress,
-#price{
-	display: block;
-}
-
-#client,
-#adress,
-#telephone {
+.input-info {
 	min-width: 95%;
 }
-
-#price,
-#contract-text {
-	width: 45%;
-}
-
-/* .input-date {
-	width: 45%;
-} */
 
 input{
 	margin-bottom: 8px;
@@ -165,12 +151,12 @@ input{
 }
 
 input:focus,
-#product:focus,
+.select-items:focus,
 .input-date:focus {
 	outline: #6d50e2;
 }
 
-.price-words {
+#price-words {
 	margin-bottom: 10px;
 	font-style: italic;
 	max-width: 95%;
@@ -180,6 +166,7 @@ input:focus,
 
 button {
 	display: block;
+	height: 30px;
 	border-radius: 8px;
 	font-size: 14px;
 	padding: 8px;
@@ -190,7 +177,7 @@ button {
 button:hover {
 	cursor: pointer;
 	color: #fff;
-	background-color: #6d50e2;
+	background-color: #2A2E35;
 }
 
 select {
@@ -216,15 +203,17 @@ select:focus {
 	margin-left: 5px;
 }
 
-.term-label {
+.term-label,
+.term-details label {
 	margin-left: 25px;
 }
 
 .buttons-contract,
 .buttons-act {
 	display: flex;
+	align-items: center;
 }
 
-#term-details {
+.term-details {
 	visibility: hidden;
 }
