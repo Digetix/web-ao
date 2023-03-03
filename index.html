@@ -46,8 +46,8 @@
 
 					<input type="text" class="input-info" placeholder="Номер телефона" maxlength="30">
 
-					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words')">
-					<p id="price-words">[сумма прописью]</p>
+					<input type="number" id="price" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words')">
+					<p class="price-words" id="price-words">[сумма прописью]</p>
 					
 					<div class="group">
 						<select class="select-items" id="product">
@@ -56,7 +56,7 @@
 						</select>
 
 						<label class="term-label" for="term">Срок</label>
-						<input type="text" class="term" value="5" maxlength="2">
+						<input type="number" class="term" value="5" maxlength="2">
 						<span>рабочих дней</span>
 					</div>
 
@@ -66,13 +66,23 @@
 					</select>
 					
 					<div class="term-details" id="term-details">
-						<input type="text" class="term-details__pay" id="term-details__pay" value="80">
+						<input type="number" class="term-details__pay" id="term-details__pay" value="80">
 						<span>%</span>
 						<label for="input-date">внести</label>
 						<input type="date" class="input-date" id="date-pay">
-						<input type="text" placeholder="Сумма оплаты, грн">
-						<input type="text" placeholder="Остаток, грн">
+						<br>
+						<input type="number" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words-first-pay')">
+						<input type="number" placeholder="Остаток, грн" maxlength="6" readonly disabled onKeyUp="num2str(this.value, 'price-words-second-pay')">
+						<p class="price-words" id="price-words-first-pay">[сумма оплаты прописью]</p>
 					</div>
+
+					<select>
+						<option value="1" selected>Краснянская Н.Е.</option>
+						<option value="2">Праслова Л.Е.</option>
+					</select>
+					<br>
+					<label for="chkbx-without-install">Без монтажа</label>
+					<input type="checkbox" id="chkbx-without-install" onclick="myFunction()">
 
 					<div class="buttons">
 						<div class="buttons-contract">
@@ -81,10 +91,15 @@
 								<option value="2" selected>2 копии</option>
 								<option value="1">1 копия</option>
 							</select>
-							<button>Договор</button>
+							<select>
+								<option value="2" selected>1-ая страница</option>
+								<option value="1">2-ая страница</option>
+							</select>
+							<button id="btn-save-contract">Договор</button>
 						</div>
-						<div class="buttons-act">
-							<button>Сохранить Акт</button>
+						<div class="buttons-act" id="buttons-act">
+							<button id="btn-save-act">Сохранить Акт</button>
+							<button>Акт (пустой)</button>
 							<select>
 								<option value="2" selected>2 копии</option>
 								<option value="1">1 копия</option>

@@ -13,26 +13,26 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* background-color: #8BC6EC;
-	background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
-	background-color: #121212;
-	;
+	background-color: #727272;
+	color: #efefef;
 }
 
 .container {
-	width: 800px;
-	height: 580px;
-	margin: 15px;
-	background: #fff;
-	padding: 20px;
+	width: 65%;
+	height: 610px;
+	margin: 5px;
+	background: #404040;
+	padding: 10px;
 	border-radius: 12px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	border: 1px solid #202020;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .container .main-title {
-	font-size: 25px;
+	font-size: 16px;
 	font-weight: 400;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	color: #efefef;
 }
 
 .container .content {
@@ -45,41 +45,41 @@ body {
 	flex-direction: column;
 	position: relative;
 	width: 30%;
-	margin-right: 25px;
+	margin-right: 20px;
 }
 
 .content .list label {
-	height: 60px;
-	border-radius: 12px;
+	height: 50px;
+	border-radius: 10px;
 	line-height: 60px;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
 	cursor: pointer;
 	padding-left: 25px;
-	color: #333;
+	color: #efefef;
 	z-index: 12;
 	transition: all 0.4s ease;
 }
 
 .content .list label:hover {
-	color: #008AD8;
+	color: #efefef;
 }
 
 #contract:checked ~ .list .contract,
 #invoice:checked ~ .list .invoice,
 #rate:checked ~ .list .rate,
 #business:checked ~ .list .business {
-	color: #fff;
+	color: #404040;
 }
 
 .container .indicator {
 	position: absolute;
 	height: 60px;
 	width: 100%;
-	background: #008AD8;
+	background: #efefef;
 	top: 0;
 	left: 0;
-	border-radius: 12px;
+	border-radius: 10px;
 	transition: all 0.4s ease;
 }
 
@@ -88,15 +88,15 @@ body {
 }
 
 #invoice:checked ~ .list .indicator {
-	top: 60px;
+	top: 50px;
 }
 
 #rate:checked ~ .list .indicator {
-	top: 120px;
+	top: 100px;
 }
 
 #business:checked ~ .list .indicator {
-	top: 180px;
+	top: 150px;
 }
 
 .container input[type="radio"] {
@@ -142,21 +142,39 @@ body {
 	min-width: 95%;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 input{
-	margin-bottom: 8px;
-	border-radius: 8px;
+	margin-bottom: 6px;
+	border-radius: 6px;
 	font-size: 14px;
 	padding: 6px;
-	border: 1px solid #6d50e2;
+	border: 1px solid #202020;
+	background-color: #333333;
+	color: #efefef;
 }
 
 input:focus,
 .select-items:focus,
 .input-date:focus {
-	outline: #6d50e2;
+	outline: #202020;
 }
 
-#price-words {
+input:hover{
+	box-shadow: 0 0 5px #efefef;
+}
+
+.price-words {
 	margin-bottom: 10px;
 	font-style: italic;
 	max-width: 95%;
@@ -166,18 +184,20 @@ input:focus,
 
 button {
 	display: block;
-	height: 30px;
+	height: 45px;
+	width: 25%;
 	border-radius: 8px;
 	font-size: 14px;
-	padding: 8px;
-	border: 1.5px solid #6d50e2;
-	margin: 10px;
+	padding: 4px;
+	border: 1px solid #202020;
+	margin: 5px;
+	color: #efefef;
+	background-color: #333333;
 }
 
 button:hover {
 	cursor: pointer;
-	color: #fff;
-	background-color: #2A2E35;
+	box-shadow: 0 0 8px #efefd6;
 }
 
 select {
@@ -186,11 +206,18 @@ select {
 	border-radius: 8px;
 	font-size: 14px;
 	padding: 5px;
-	border: 1px solid #6d50e2;
+	border: 1px solid #202020;
+	background-color: #333333;
+	color: #efefef;
 }
 
 select:focus {
-	outline: #6d50e2;
+	outline: #efefd6;
+}
+
+select:hover {
+	cursor: pointer;
+	box-shadow: 0 0 8px #efefd6;
 }
 
 .select-items {
@@ -212,8 +239,10 @@ select:focus {
 .buttons-act {
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 }
 
 .term-details {
 	visibility: hidden;
 }
+
