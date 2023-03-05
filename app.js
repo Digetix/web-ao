@@ -17,8 +17,8 @@ let date = new Date();
 
 dateContract.value = year+"-"+month+"-"+dayOfDate;
 
-priceContract.addEventListener('change', function handleChange(event) {
-		pricePay.value = Math.round((priceContract.value / 100) * 80);
+priceContract.addEventListener("change", function handleChange(event) {
+		pricePay.value = ((priceContract.value / 100) * 80);
 	}
 );
 
@@ -27,8 +27,8 @@ select.addEventListener('change', function handleChange(event) {
 		termDetails.style.visibility = "hidden";
 	} else {
 		termDetails.style.visibility = "visible";
-		datePay.value = dateContract.value;
-		pricePay.value = Math.round((priceContract.value / 100) * 80);
+		datePay.value = dateContract.value; 
+		pricePay.value = ((priceContract.value / 100) * 80);
 	}
 });
 
