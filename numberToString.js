@@ -78,4 +78,3 @@ function n(start, len) {
     if (start > price.length) return 0;
     else return Number(price.substr(price.length - start, len));
 }
-// ]]>

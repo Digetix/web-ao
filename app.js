@@ -7,6 +7,7 @@ const select = document.getElementById("terms-of-payment");
 			saveContractBtn = document.getElementById("btn-save-contract");
 			priceContract = document.getElementById("price");
 			pricePay = document.getElementById("price-pay-contract");
+			pricePayAdd = document.getElementById("price-pay-contract-add");
 
 let date = new Date();
 		dayOfDate = date.getDate(); 
@@ -17,10 +18,10 @@ let date = new Date();
 
 dateContract.value = year+"-"+month+"-"+dayOfDate;
 
-priceContract.addEventListener("change", function handleChange(event) {
-		pricePay.value = ((priceContract.value / 100) * 80);
-	}
-);
+function getValue(){
+	pricePay.value = Math.ceil((priceContract.value / 100) * 80);
+	pricePayAdd.value = priceContract.value - pricePay.value; 
+};
 
 select.addEventListener('change', function handleChange(event) {
 	if (select.options[select.selectedIndex].value == 'value1') {
@@ -28,7 +29,6 @@ select.addEventListener('change', function handleChange(event) {
 	} else {
 		termDetails.style.visibility = "visible";
 		datePay.value = dateContract.value; 
-		pricePay.value = ((priceContract.value / 100) * 80);
 	}
 });
 

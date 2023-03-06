@@ -46,7 +46,7 @@
 
 					<input type="text" class="input-info" placeholder="Номер телефона" maxlength="30">
 
-					<input type="number" id="price" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words')">
+					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words')" oninput="getValue()">
 					<p class="price-words" id="price-words">[сумма прописью]</p>
 					
 					<div class="group">
@@ -57,7 +57,7 @@
 						</select>
 
 						<label class="term-label" for="term">Срок</label>
-						<input type="number" class="term" value="5" maxlength="2">
+						<input type="text" class="term" value="5" maxlength="2">
 						<span>рабочих дней</span>
 					</div>
 
@@ -67,13 +67,13 @@
 					</select>
 					
 					<div class="term-details" id="term-details">
-						<input type="number" class="term-details__pay" id="term-details__pay" value="80">
+						<input type="text" class="term-details__pay" id="term-details__pay" value="80">
 						<span>%</span>
 						<label for="input-date">внести</label>
 						<input type="date" class="input-date" id="date-pay">
 						<br>
-						<input type="number" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words-first-pay')">
-						<input type="number" placeholder="Остаток, грн" maxlength="6" readonly disabled onKeyUp="num2str(this.value, 'price-words-second-pay')">
+						<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words-first-pay')">
+						<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" readonly disabled onKeyUp="num2str(this.value, 'price-words-second-pay')">
 						<p class="price-words" id="price-words-first-pay">[сумма оплаты прописью]</p>
 					</div>
 
