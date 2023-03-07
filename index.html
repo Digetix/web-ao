@@ -46,7 +46,7 @@
 
 					<input type="text" class="input-info" placeholder="Номер телефона" maxlength="30">
 
-					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words')" oninput="getValue()">
+					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words')">
 					<p class="price-words" id="price-words">[сумма прописью]</p>
 					
 					<div class="group">
@@ -67,7 +67,7 @@
 					</select>
 					
 					<div class="term-details" id="term-details">
-						<input type="text" class="term-details__pay" id="term-details__pay" value="80">
+						<input type="text" class="term-details__pay" id="term-details__pay" value="80" maxlength="2">
 						<span>%</span>
 						<label for="input-date">внести</label>
 						<input type="date" class="input-date" id="date-pay">

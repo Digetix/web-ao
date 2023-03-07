@@ -6,6 +6,7 @@ const select = document.getElementById("terms-of-payment");
 			saveActBtn = document.getElementById("buttons-act");
 			saveContractBtn = document.getElementById("btn-save-contract");
 			priceContract = document.getElementById("price");
+			pricePayPercent = document.getElementById("term-details__pay");
 			pricePay = document.getElementById("price-pay-contract");
 			pricePayAdd = document.getElementById("price-pay-contract-add");
 
@@ -18,10 +19,20 @@ let date = new Date();
 
 dateContract.value = year+"-"+month+"-"+dayOfDate;
 
-function getValue(){
-	pricePay.value = Math.ceil((priceContract.value / 100) * 80);
-	pricePayAdd.value = priceContract.value - pricePay.value; 
+function calcPayContract() {
+	pricePay.value = Math.ceil((priceContract.value / 100) * pricePayPercent.value);
+	pricePayAdd.value = priceContract.value - pricePay.value;
 };
+
+priceContract.addEventListener("input", () => {
+	calcPayContract();
+});
+
+pricePayPercent.addEventListener("input", () => {
+	if (pricePay.value != "") {
+		calcPayContract();
+	}		 
+});
 
 select.addEventListener('change', function handleChange(event) {
 	if (select.options[select.selectedIndex].value == 'value1') {
@@ -29,6 +40,8 @@ select.addEventListener('change', function handleChange(event) {
 	} else {
 		termDetails.style.visibility = "visible";
 		datePay.value = dateContract.value; 
+		pricePayPercent.value = "80";
+		calcPayContract();
 	}
 });
 
