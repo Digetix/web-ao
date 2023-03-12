@@ -67,13 +67,11 @@
 					</select>
 					
 					<div class="term-details" id="term-details">
-						<input type="text" class="term-details__pay" id="term-details__pay" value="80" maxlength="2">
-						<span>%</span>
-						<label for="input-date">внести</label>
-						<input type="date" class="input-date" id="date-pay">
-						<br>
 						<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words-first-pay')">
 						<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" readonly disabled onKeyUp="num2str(this.value, 'price-words-second-pay')">
+						<label>внести</label>
+						<input type="date" class="input-date" id="date-pay">
+						<br>
 						<p class="price-words" id="price-words-first-pay">[сумма оплаты прописью]</p>
 					</div>
 
