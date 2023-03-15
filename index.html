@@ -37,7 +37,7 @@
 				<div class="contract text">
 					<input type="text" maxlength="10" placeholder="Номер договора" autofocus>
 
-					<label for="calendar">от</label>
+					<label>от</label>
 					<input type="date" class="input-date" id="myDate">
 
 					<input type="text" class="input-info" placeholder="ФИО" maxlength="50">
@@ -46,8 +46,8 @@
 
 					<input type="text" class="input-info" placeholder="Номер телефона" maxlength="30">
 
-					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words')">
-					<p class="price-words" id="price-words">[сумма прописью]</p>
+					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" oninput="num2str(this.value, 'price-words')">
+					<p class="price-words" id="price-words">[сумма договора прописью]</p>
 					
 					<div class="group">
 						<select class="select-items" id="product">
@@ -67,12 +67,12 @@
 					</select>
 					
 					<div class="term-details" id="term-details">
-						<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onKeyUp="num2str(this.value, 'price-words-first-pay')">
-						<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" readonly disabled onKeyUp="num2str(this.value, 'price-words-second-pay')">
+						<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" oninput="num2str(this.value, 'price-words-second-pay')">
+						<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" readonly disabled>
 						<label>внести</label>
 						<input type="date" class="input-date" id="date-pay">
 						<br>
-						<p class="price-words" id="price-words-first-pay">[сумма оплаты прописью]</p>
+						<p class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</p>
 					</div>
 
 					<select>

@@ -200,6 +200,10 @@ button:hover {
 	box-shadow: 0 0 8px #efefd6;
 }
 
+button:active {
+	box-shadow: none;
+}
+
 select {
 	height: 30px;
 	margin-bottom: 8px;
