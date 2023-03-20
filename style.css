@@ -243,10 +243,23 @@ select:hover {
 .buttons-act {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
+}
+
+.buttons-contract select,
+.buttons-act select {
+	width: 20%;
 }
 
 .term-details {
 	visibility: hidden;
+}
+
+#price-pay-contract-add{
+	border: none;
+}
+#price-pay-contract-add:hover{
+	border: none;
+	box-shadow: none;
 }
 

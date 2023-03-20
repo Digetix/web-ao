@@ -18,27 +18,50 @@ let date = new Date();
 
 dateContract.value = year+"-"+month+"-"+dayOfDate;
 
-function calcPayContract() {
+const addDays = (date, period) => {
+	date.setDate(date.getDate() + period);
+}
+
+let dateAddPay = new Date();
+addDays(dateAddPay, 3);
+dayOfDatePay = dateAddPay.getDate(); 
+			if (dayOfDatePay<10) dayOfDatePay='0'+dayOfDatePay;
+		monthPay = dateAddPay.getMonth()+1;
+			if (monthPay<10) monthPay='0'+monthPay;
+		yearPay = dateAddPay.getFullYear();
+
+function calcPayContract() {	
 	pricePay.value = Math.ceil((priceContract.value / 100) * 80);
-	pricePayAdd.value = priceContract.value - pricePay.value;
+	pricePayAdd.value = priceContract.value - pricePay.value;	
 };
 
 priceContract.addEventListener("input", () => {
 	calcPayContract();
 });
 
-pricePay.addEventListener("input", () => {
-	pricePayAdd.value = priceContract.value - pricePay.value;
-});
-
 select.addEventListener('change', function handleChange(event) {
 	if (select.options[select.selectedIndex].value == 'value1') {
 		termDetails.style.visibility = "hidden";
-	} else {
-		termDetails.style.visibility = "visible";
-		datePay.value = dateContract.value; 
-		calcPayContract();
+	} else {		
+		if (priceContract.value === '0' || priceContract.value === '') {
+			alert("Сумма заказа не указана!");
+			select.value = 'value1';
+		} else {
+			termDetails.style.visibility = "visible";
+			datePay.value = yearPay+"-"+monthPay+"-"+dayOfDatePay;
+			calcPayContract();
+		}		
 	}
+});
+
+pricePay.addEventListener("input", () => {
+	let pricePayInt = parseInt(pricePay.value);
+	let priceContractInt = parseInt(priceContract.value);
+	if (pricePayInt > priceContractInt) {
+		alert("Сумма оплаты превышает сумму заказа!");
+	}	else {
+		pricePayAdd.value = priceContractInt - pricePayInt;
+	}	
 });
 
 function myFunction() {
