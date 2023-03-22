@@ -35,16 +35,16 @@
 			</div>
 			<div class="text-content">
 				<div class="contract text">
-					<input type="text" maxlength="10" placeholder="Номер договора" autofocus>
+					<input type="text" id="index-contract" maxlength="10" placeholder="Номер договора" autofocus>
 
 					<label>от</label>
 					<input type="date" class="input-date" id="myDate">
 
-					<input type="text" class="input-info" placeholder="ФИО" maxlength="50">
+					<input type="text" class="input-info" id="input-name" placeholder="ФИО" maxlength="50">
 
-					<input type="text" class="input-info" placeholder="Адрес" maxlength="50">
+					<input type="text" class="input-info" id="input-adress" placeholder="Адрес" maxlength="50">
 
-					<input type="text" class="input-info" placeholder="Номер телефона" maxlength="30">
+					<input type="text" class="input-info" id="input-tel" placeholder="Номер телефона" maxlength="30">
 
 					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" oninput="num2str(this.value, 'price-words')">
 					<p class="price-words" id="price-words">[сумма договора прописью]</p>
@@ -85,7 +85,7 @@
 
 					<div class="buttons">
 						<div class="buttons-contract">
-							<button>Сохранить Договор</button>
+							<button id="button-save-contract">Сохранить Договор</button>
 							<select>
 								<option value="2" selected>2 копии</option>
 								<option value="1">1 копия</option>
@@ -94,16 +94,16 @@
 								<option value="2" selected>1-ая страница</option>
 								<option value="1">2-ая страница</option>
 							</select>
-							<button id="btn-save-contract">Договор</button>
+							<button id="button-print-contract">Договор</button>
 						</div>
 						<div class="buttons-act" id="buttons-act">
-							<button id="btn-save-act">Сохранить Акт</button>
+							<button id="button-save-act">Сохранить Акт</button>
 							<button>Акт (пустой)</button>
 							<select>
 								<option value="2" selected>2 копии</option>
 								<option value="1">1 копия</option>
 							</select>
-							<button>Акт</button>
+							<button id="button-print-act">Акт</button>
 						</div>
 					</div>
 					

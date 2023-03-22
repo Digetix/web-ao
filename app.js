@@ -4,10 +4,12 @@ const select = document.getElementById("terms-of-payment");
 			datePay = document.getElementById("date-pay");
 			checkBox = document.getElementById("chkbx-without-install");
 			saveActBtn = document.getElementById("buttons-act");
-			saveContractBtn = document.getElementById("btn-save-contract");
+			saveContractBtn = document.getElementById("button-save-contract");
 			priceContract = document.getElementById("price");
 			pricePay = document.getElementById("price-pay-contract");
 			pricePayAdd = document.getElementById("price-pay-contract-add");
+			btnPrintContract = document.getElementById("button-print-contract");			
+			btnPrintAct = document.getElementById("button-print-act");
 
 let date = new Date();
 		dayOfDate = date.getDate(); 
@@ -64,13 +66,45 @@ pricePay.addEventListener("input", () => {
 	}	
 });
 
+btnPrintContract.addEventListener("click", function () {
+	checkEmptyInputs();
+});
+
+btnPrintAct.addEventListener("click", function () {
+	checkEmptyInputs();
+});
+
+function checkEmptyInputs(){
+	if (document.getElementById("index-contract").value === '') {
+		alert("Не указан номер договора!");
+		return
+	} 
+	if (document.getElementById("input-name").value === '') {
+		alert("Не указано ФИО заказчика!");
+		return
+	}
+	if (document.getElementById("input-adress").value === '') {
+		alert("Не указан адрес!");
+		return
+	}
+	if (document.getElementById("input-tel").value === '') {
+		alert("Не указан номер телефона!");
+		return
+	}
+	if (priceContract.value === '') {
+		alert("Не указана сумма договора!");
+		return
+	}	
+	alert("Всё работает!");
+};
+
 function myFunction() {
 	if (checkBox.checked == true){
 		saveActBtn.style.visibility = "hidden";
-		saveContractBtn.textContent = 'Договор без монтажа';
+		btnPrintContract.textContent = 'Договор без монтажа';
 	} else {
 		saveActBtn.style.visibility = "visible";
-		saveContractBtn.textContent = 'Договор';
+		btnPrintContract.textContent = 'Договор';
 	}
 }
 
