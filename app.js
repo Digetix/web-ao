@@ -68,6 +68,7 @@ pricePay.addEventListener("input", () => {
 
 btnPrintContract.addEventListener("click", function () {
 	checkEmptyInputs();
+	createPDF();
 });
 
 btnPrintAct.addEventListener("click", function () {
@@ -96,6 +97,15 @@ function checkEmptyInputs(){
 		return
 	}	
 	alert("Всё работает!");
+};
+
+function createPDF(){
+	var doc = new jsPDF();
+
+	doc.setFontSize(40);
+	doc.text("Octonyan loves jsPDF", 35, 25);
+		// Set the document to automatically print via JS
+	doc.autoPrint();
 };
 
 function myFunction() {
