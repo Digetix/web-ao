@@ -68,7 +68,17 @@ pricePay.addEventListener("input", () => {
 
 btnPrintContract.addEventListener("click", function () {
 	checkEmptyInputs();
-	createPDF();
+
+	const { jsPDF } = window.jspdf;
+	const doc = new jsPDF();
+	const myFont = './fonts/Calibri.ttf'; // load the *.ttf font file as binary string
+
+	// add the font to jsPDF
+	doc.addFileToVFS("Calibri.ttf", myFont);
+	doc.addFont("Calibri.ttf", "MyFont", "normal");
+	doc.setFont("MyFont");
+	doc.text("Договор", 10, 10);
+	doc.save("a4.pdf");
 });
 
 btnPrintAct.addEventListener("click", function () {
@@ -97,15 +107,6 @@ function checkEmptyInputs(){
 		return
 	}	
 	alert("Всё работает!");
-};
-
-function createPDF(){
-	var doc = new jsPDF();
-
-	doc.setFontSize(40);
-	doc.text("Octonyan loves jsPDF", 35, 25);
-		// Set the document to automatically print via JS
-	doc.autoPrint();
 };
 
 function myFunction() {
