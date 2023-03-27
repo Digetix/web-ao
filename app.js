@@ -10,6 +10,24 @@ const select = document.getElementById("terms-of-payment");
 			pricePayAdd = document.getElementById("price-pay-contract-add");
 			btnPrintContract = document.getElementById("button-print-contract");			
 			btnPrintAct = document.getElementById("button-print-act");
+		
+			var docDefinition = {
+					
+				pageSize:'A4',
+				pageOrientation:'portrait',
+				pageMargins:[50,50,30,60],				
+				header:function(currentPage,pageCount) {
+					return {
+						text: currentPage.toString() + ' из ' + pageCount,
+						alignment:'right',
+						margin:[0,30,10,50]
+					}
+				},
+				content: [
+					'ДОГОВОР',
+					'АБзац с текстом'
+				]
+			};
 
 let date = new Date();
 		dayOfDate = date.getDate(); 
@@ -68,17 +86,11 @@ pricePay.addEventListener("input", () => {
 
 btnPrintContract.addEventListener("click", function () {
 	checkEmptyInputs();
-
-	const { jsPDF } = window.jspdf;
-	const doc = new jsPDF();
-	const myFont = './fonts/Calibri.ttf'; // load the *.ttf font file as binary string
-
-	// add the font to jsPDF
-	doc.addFileToVFS("Calibri.ttf", myFont);
-	doc.addFont("Calibri.ttf", "MyFont", "normal");
-	doc.setFont("MyFont");
-	doc.text("Договор", 10, 10);
-	doc.save("a4.pdf");
+	//pdfMake.createPdf(docInfo).download('name.pdf');
+	//const win = window.open('', "tempWinForPdf");
+	pdfMake.createPdf(docDefinition).download();
+	//win.close();
+	//pdfMake.createPdf(docDefinition).print({}, window);
 });
 
 btnPrintAct.addEventListener("click", function () {
