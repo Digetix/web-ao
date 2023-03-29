@@ -11,20 +11,12 @@ const select = document.getElementById("terms-of-payment");
 			btnPrintContract = document.getElementById("button-print-contract");			
 			btnPrintAct = document.getElementById("button-print-act");
 		
-			var docDefinition = {
-					
+			var docDefinition = {	
 				pageSize:'A4',
 				pageOrientation:'portrait',
-				pageMargins:[50,50,30,60],				
-				header:function(currentPage,pageCount) {
-					return {
-						text: currentPage.toString() + ' из ' + pageCount,
-						alignment:'right',
-						margin:[0,30,10,50]
-					}
-				},
+				pageMargins:[10,10,10,10],
 				content: [
-					'ДОГОВОР',
+					document.getElementById("index-contract"),
 					'АБзац с текстом'
 				]
 			};
@@ -86,11 +78,7 @@ pricePay.addEventListener("input", () => {
 
 btnPrintContract.addEventListener("click", function () {
 	checkEmptyInputs();
-	//pdfMake.createPdf(docInfo).download('name.pdf');
-	//const win = window.open('', "tempWinForPdf");
-	pdfMake.createPdf(docDefinition).download();
-	//win.close();
-	//pdfMake.createPdf(docDefinition).print({}, window);
+	//pdfMake.createPdf(docDefinition).print();
 });
 
 btnPrintAct.addEventListener("click", function () {
