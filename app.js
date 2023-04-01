@@ -10,17 +10,8 @@ const select = document.getElementById("terms-of-payment");
 			pricePayAdd = document.getElementById("price-pay-contract-add");
 			btnPrintContract = document.getElementById("button-print-contract");			
 			btnPrintAct = document.getElementById("button-print-act");
+			element = document.getElementById("index-contract");
 		
-			var docDefinition = {	
-				pageSize:'A4',
-				pageOrientation:'portrait',
-				pageMargins:[10,10,10,10],
-				content: [
-					document.getElementById("index-contract"),
-					'АБзац с текстом'
-				]
-			};
-
 let date = new Date();
 		dayOfDate = date.getDate(); 
 			if (dayOfDate<10) dayOfDate='0'+dayOfDate;
@@ -78,7 +69,8 @@ pricePay.addEventListener("input", () => {
 
 btnPrintContract.addEventListener("click", function () {
 	checkEmptyInputs();
-	//pdfMake.createPdf(docDefinition).print();
+	var text = element.value;
+	html2pdf(text);
 });
 
 btnPrintAct.addEventListener("click", function () {
