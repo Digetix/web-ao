@@ -69,8 +69,10 @@ pricePay.addEventListener("input", () => {
 
 btnPrintContract.addEventListener("click", function () {
 	checkEmptyInputs();
-	var text = element.value;
-	html2pdf(text);
+
+	html2pdf()
+	.from(element.value)
+	.save();
 });
 
 btnPrintAct.addEventListener("click", function () {
