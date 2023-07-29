@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300&display=swap');
 
 *{
-  padding: 0;
   margin: 0;
   box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
@@ -136,7 +135,8 @@ body {
 }
 
 .input-info {
-	min-width: 95%;
+	width: 65%;
+	max-width: 95%;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -159,12 +159,6 @@ input{
 	border: 1px solid #202020;
 	background-color: #333333;
 	color: #efefef;
-}
-
-input:focus,
-.select-items:focus,
-.input-date:focus {
-	outline: #202020;
 }
 
 input:hover{
@@ -203,6 +197,7 @@ button:active {
 
 select {
 	height: 30px;
+	width: 45%;
 	margin-bottom: 8px;
 	border-radius: 8px;
 	font-size: 14px;
@@ -221,9 +216,6 @@ select:hover {
 	box-shadow: 0 0 8px #efefd6;
 }
 
-.select-items {
-	width: 45%;
-}
 
 .term {
 	width: 8%;
@@ -237,8 +229,7 @@ select:hover {
 }
 
 .buttons-contract,
-.buttons-act,
-#salons {
+.buttons-act{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -251,12 +242,4 @@ select:hover {
 
 .term-details {
 	visibility: hidden;
-}
-
-#price-pay-contract-add{
-	border: none;
-}
-#price-pay-contract-add:hover{
-	border: none;
-	box-shadow: none;
 }

@@ -62,48 +62,14 @@ pricePay.addEventListener("input", () => {
 	let priceContractInt = parseInt(priceContract.value);
 	if (pricePayInt > priceContractInt) {
 		alert("Сумма оплаты превышает сумму заказа!");
+		calcPayContract();
 	}	else {
 		pricePayAdd.value = priceContractInt - pricePayInt;
 	}	
 });
 
-btnPrintContract.addEventListener("click", function () {
-	checkEmptyInputs();
 
-	html2pdf()
-	.from(element.value)
-	.save();
-});
-
-btnPrintAct.addEventListener("click", function () {
-	checkEmptyInputs();
-});
-
-function checkEmptyInputs(){
-	if (document.getElementById("index-contract").value === '') {
-		alert("Не указан номер договора!");
-		return
-	} 
-	if (document.getElementById("input-name").value === '') {
-		alert("Не указано ФИО заказчика!");
-		return
-	}
-	if (document.getElementById("input-adress").value === '') {
-		alert("Не указан адрес!");
-		return
-	}
-	if (document.getElementById("input-tel").value === '') {
-		alert("Не указан номер телефона!");
-		return
-	}
-	if (priceContract.value === '') {
-		alert("Не указана сумма договора!");
-		return
-	}	
-	alert("Всё работает!");
-};
-
-function myFunction() {
+function checkWithoutInstall() {
 	if (checkBox.checked == true){
 		saveActBtn.style.visibility = "hidden";
 		btnPrintContract.textContent = 'Договор без монтажа';

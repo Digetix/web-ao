@@ -7,9 +7,6 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="app.js" defer></script>
 	<script src="numberToString.js" defer></script>
-	<script src='js/pdfmake.min.js'></script>
-	<script src='js/vfs_fonts.js'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 	<title>Печать документов</title>
 </head>
 <body>
@@ -37,82 +34,82 @@
 				</div>
 			</div>
 			<div class="text-content">
-				<div class="contract text">
-					<input type="text" id="index-contract" maxlength="10" placeholder="Номер договора" autofocus>
-
-					<label>от</label>
-					<input type="date" class="input-date" id="myDate">
-
-					<input type="text" class="input-info" id="input-name" placeholder="ФИО" maxlength="50">
-
-					<input type="text" class="input-info" id="input-adress" placeholder="Адрес" maxlength="50">
-
-					<input type="text" class="input-info" id="input-tel" placeholder="Номер телефона" maxlength="30">
-
-					<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" oninput="num2str(this.value, 'price-words')">
-					<p class="price-words" id="price-words">[сумма договора прописью]</p>
-					
-					<div class="group">
-						<select class="select-items" id="product">
-							<option value="value1" selected>Вiкна ПВХ</option>
-							<option value="value2">Ролети</option>
-							<option value="value3">Дверi</option>
+				<form autocomplete="off">
+					<div class="contract text">
+						<input type="text" id="index-contract" maxlength="10" placeholder="Номер договора" autofocus required>
+	
+						<label for="myDate">от</label>
+						<input type="date" class="input date" id="myDate">
+	
+						<input type="text" class="input-info" id="input-name" placeholder="ФИО" maxlength="50" required>
+	
+						<input type="text" class="input-info" id="input-adress" placeholder="Адрес" maxlength="50" required>
+	
+						<input type="text" class="input-info" id="input-tel" placeholder="Номер телефона" maxlength="30" required>
+	          <br>
+						<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" oninput="num2str(this.value, 'price-words')" required>
+						<p class="price-words" id="price-words">[сумма договора прописью]</p>						
+						
+						<div class="group">
+							<select id="product">
+								<option value="value1" selected>Вiкна ПВХ</option>
+								<option value="value2">Ролети</option>
+								<option value="value3">Дверi</option>
+							</select>			
+							
+							<label class="term-label" for="term">Срок</label>
+							<input type="text" class="term" value="5" maxlength="2">
+							<span>рабочих дней</span>
+						</div>
+	
+						<select id="terms-of-payment">
+							<option value="value1" selected>100% оплата</option>
+							<option value="value2">предоплата</option>
 						</select>
+						
+						<div class="term-details" id="term-details">
+							<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" oninput="num2str(this.value, 'price-words-second-pay')" required>
+							<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" disabled>
+							<label for="date-pay">внести</label>
+							<input type="date" id="date-pay">
+							<br>
+							<p class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</p>
+						</div>
 
-						<label class="term-label" for="term">Срок</label>
-						<input type="text" class="term" value="5" maxlength="2">
-						<span>рабочих дней</span>
-					</div>
-
-					<select class="select-items" id="terms-of-payment">
-						<option value="value1" selected>100% оплата</option>
-						<option value="value2">предоплата</option>
-					</select>
-					
-					<div class="term-details" id="term-details">
-						<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" oninput="num2str(this.value, 'price-words-second-pay')">
-						<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" readonly disabled>
-						<label>внести</label>
-						<input type="date" class="input-date" id="date-pay">
 						<br>
-						<p class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</p>
-					</div>
-					
-					<div id="salons">
 						<select>
 							<option value="1" selected>Краснянская Н.Е.</option>
 							<option value="2">Праслова Л.Е.</option>
 						</select>
 						<label for="chkbx-without-install">Без монтажа</label>
-						<input type="checkbox" id="chkbx-without-install" onclick="myFunction()">
+						<input type="checkbox" id="chkbx-without-install" onclick="checkWithoutInstall()">										
+	
+						<div class="buttons">
+							<div class="buttons-contract">
+								<button id="button-save-contract">Сохранить Договор</button>
+								<select>
+									<option value="2" selected>2 копии</option>
+									<option value="1">1 копия</option>
+								</select>
+								<select>
+									<option value="1" selected>1-ая страница</option>
+									<option value="2">2-ая страница</option>
+								</select>
+								<button id="button-print-contract">Договор</button>
+							</div>
+							<div class="buttons-act" id="buttons-act">
+								<button id="button-save-act">Сохранить Акт</button>
+								<button>Акт (пустой)</button>
+								<select>
+									<option value="2" selected>2 копии</option>
+									<option value="1">1 копия</option>
+								</select>
+								<button id="button-print-act">Акт</button>
+							</div>
+						</div>
 					</div>
-					
+				</form>
 
-					<div class="buttons">
-						<div class="buttons-contract">
-							<button id="button-save-contract">Сохранить Договор</button>
-							<select>
-								<option value="2" selected>2 копии</option>
-								<option value="1">1 копия</option>
-							</select>
-							<select>
-								<option value="2" selected>1-ая страница</option>
-								<option value="1">2-ая страница</option>
-							</select>
-							<button id="button-print-contract">Договор</button>
-						</div>
-						<div class="buttons-act" id="buttons-act">
-							<button id="button-save-act">Сохранить Акт</button>
-							<button>Акт (пустой)</button>
-							<select>
-								<option value="2" selected>2 копии</option>
-								<option value="1">1 копия</option>
-							</select>
-							<button id="button-print-act">Акт</button>
-						</div>
-					</div>
-					
-				</div>
 				<div class="invoice text">
 					<p>Minus vel consequatur, quae delectus ipsa ut architecto totam officia, laborum repudiandae eius unde eligendi atque ipsam.</p>
 				</div>
@@ -122,6 +119,7 @@
 				<div class="business text">
 					<p>Laborum repudiandae eius unde eligendi atque ipsam.</p>
 				</div>
+
 			</div>
 		</div>
 	</div>
