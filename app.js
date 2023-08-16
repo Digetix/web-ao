@@ -18,12 +18,11 @@ let date = new Date();
 		month = date.getMonth()+1;
 			if (month<10) month='0'+month;
 		year = date.getFullYear();
-
 dateContract.value = year+"-"+month+"-"+dayOfDate;
 
 const addDays = (date, period) => {
 	date.setDate(date.getDate() + period);
-}
+};
 
 let dateAddPay = new Date();
 addDays(dateAddPay, 3);
