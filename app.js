@@ -11,6 +11,7 @@ const select = document.getElementById("terms-of-payment");
 			btnPrintContract = document.getElementById("button-print-contract");			
 			btnPrintAct = document.getElementById("button-print-act");
 			element = document.getElementById("index-contract");
+			priceWords = document.getElementById("price-words");
 		
 let date = new Date();
 		dayOfDate = date.getDate(); 
@@ -77,7 +78,6 @@ function checkWithoutInstall() {
 		btnPrintContract.textContent = 'Договор';
 	}
 }
-
 
 
 

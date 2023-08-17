@@ -68,7 +68,7 @@
 						</select>
 						
 						<div class="term-details" id="term-details">
-							<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" oninput="num2str(this.value, 'price-words-second-pay')" required>
+							<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onkeyup="num2str(this.value, 'price-words-second-pay')" required>
 							<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" disabled>
 							<label for="date-pay">внести</label>
 							<input type="date" id="date-pay">
