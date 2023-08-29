@@ -30,16 +30,14 @@
 				<label for="business" class="business">
 					<span class="topic">Договор (2)</span>
 				</label>
-				<div class="indicator">
-				</div>
+				<div class="indicator"></div>
 			</div>
 			<div class="text-content">
 				<form autocomplete="off">
 					<div class="contract text">
 						<input type="text" id="index-contract" maxlength="10" placeholder="Номер договора" autofocus required>
 	
-						<label for="myDate">от</label>
-						<input type="date" class="input date" id="myDate">
+						<span>от</span> <input type="date" class="input date" id="myDate">
 	
 						<input type="text" class="input-info" id="input-name" placeholder="ФИО" maxlength="50" required>
 	
@@ -48,19 +46,16 @@
 						<input type="text" class="input-info" id="input-tel" placeholder="Номер телефона" maxlength="30" required>
 	          <br>
 						<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" oninput="num2str(this.value, 'price-words')" required>
-						<p class="price-words" id="price-words">[сумма договора прописью]</p>						
 						
-						<div class="group">
-							<select id="product">
-								<option value="value1" selected>Вiкна ПВХ</option>
-								<option value="value2">Ролети</option>
-								<option value="value3">Дверi</option>
-							</select>			
-							
-							<label class="term-label" for="term">Срок</label>
-							<input type="text" class="term" value="5" maxlength="2">
-							<span>рабочих дней</span>
-						</div>
+						<div class="price-words" id="price-words">[сумма договора прописью]</div>						
+						
+						<select id="product">
+							<option value="value1" selected>Вiкна ПВХ</option>
+							<option value="value2">Ролети</option>
+							<option value="value3">Дверi</option>
+						</select>
+
+						<div>Срок<input type="text" class="term" value="5" maxlength="2"> рабочих дней</div>
 	
 						<select id="terms-of-payment">
 							<option value="value1" selected>100% оплата</option>
@@ -70,10 +65,8 @@
 						<div class="term-details" id="term-details">
 							<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onkeyup="num2str(this.value, 'price-words-second-pay')" required>
 							<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" disabled>
-							<label for="date-pay">внести</label>
-							<input type="date" id="date-pay">
-							<br>
-							<p class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</p>
+							<div>внести<input type="date" id="date-pay"></div>
+							<div class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</div>
 						</div>
 
 						<br>

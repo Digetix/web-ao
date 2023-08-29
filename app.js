@@ -10,7 +10,6 @@ const select = document.getElementById("terms-of-payment");
 			pricePayAdd = document.getElementById("price-pay-contract-add");
 			btnPrintContract = document.getElementById("button-print-contract");			
 			btnPrintAct = document.getElementById("button-print-act");
-			element = document.getElementById("index-contract");
 		
 let date = new Date();
 		dayOfDate = date.getDate(); 

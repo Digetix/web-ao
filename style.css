@@ -139,6 +139,18 @@ body {
 	max-width: 95%;
 }
 
+input{
+	margin-bottom: 6px;
+	font-size: 14px;
+	padding: 4px;
+	border-width: 0 0 2px 0;
+	border-style: solid;
+	border-color: #efefef;
+	background: #404040;
+	color: #efefef;
+	outline: none;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -149,20 +161,6 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-input{
-	margin-bottom: 6px;
-	border-radius: 6px;
-	font-size: 14px;
-	padding: 6px;
-	border: 1px solid #202020;
-	background-color: #333333;
-	color: #efefef;
-}
-
-input:hover{
-	box-shadow: 0 0 5px #efefef;
 }
 
 .price-words {
