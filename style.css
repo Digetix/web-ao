@@ -12,7 +12,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #404040;
+	background: linear-gradient(110.6deg, rgb(156, 116, 129) -18.3%, rgb(67, 54, 74) 16.4%, rgb(47, 48, 67) 68.2%, rgb(27, 23, 36) 99.1%);
 	color: #efefef;
 }
 
@@ -22,6 +22,7 @@ body {
 	margin: 5px;
 	padding: 10px;
 	border-radius: 12px;
+	background-color: #27272b;
 }
 
 .container .main-title {
@@ -36,12 +37,15 @@ body {
 	justify-content: space-between;
 }
 
-.container .content .list{
+.container .content .list {
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	width: 30%;
+	height: 100%;
 	margin-right: 20px;
+	background-color: #2c2c31;
+	border-radius: 10px;
 }
 
 .content .list label {
@@ -64,7 +68,8 @@ body {
 #contract:checked ~ .list .contract,
 #invoice:checked ~ .list .invoice,
 #rate:checked ~ .list .rate,
-#business:checked ~ .list .business {
+#business:checked ~ .list .business,
+#equipment:checked ~ .list .equipment {
 	color: #404040;
 }
 
@@ -95,13 +100,16 @@ body {
 	top: 150px;
 }
 
+#equipment:checked ~ .list .indicator {
+	top: 200px;
+}
+
 .container input[type="radio"] {
 	display: none;
 }
 
 .container .content .text-content {
 	width: 90%;
-	height: 100%;
 }
 
 .content .text-content .text {
@@ -115,13 +123,15 @@ body {
 #contract:checked ~ .text-content .contract,
 #invoice:checked ~ .text-content .invoice,
 #rate:checked ~ .text-content .rate,
-#business:checked ~ .text-content .business {
+#business:checked ~ .text-content .business,
+#equipment:checked ~ .text-content .equipment { 
 	display: block;
 }
 
 #invoice:checked ~ .text-content .contract,
 #rate:checked ~ .text-content .contract,
-#business:checked ~ .text-content .contract {
+#business:checked ~ .text-content .contract,
+#equipment:checked ~ .text-content .contract {
 	display: none;
 }
 .content .text-content p {
@@ -136,17 +146,16 @@ body {
 
 .input-info {
 	width: 65%;
-	max-width: 95%;
 }
 
 input{
 	margin-bottom: 6px;
 	font-size: 14px;
-	padding: 4px;
-	border-width: 0 0 2px 0;
+	padding: 5px;
+	border-width: 0 0 1px 0;
 	border-style: solid;
 	border-color: #efefef;
-	background: #404040;
+	background: transparent;
 	color: #efefef;
 	outline: none;
 }
@@ -196,13 +205,14 @@ button:active {
 select {
 	height: 30px;
 	width: 45%;
-	margin-bottom: 8px;
+	margin-bottom: 15px;
 	border-radius: 8px;
 	font-size: 14px;
 	padding: 5px;
 	border: 1px solid #202020;
 	background-color: #333333;
 	color: #efefef;
+
 }
 
 select:focus {
@@ -213,7 +223,6 @@ select:hover {
 	cursor: pointer;
 	box-shadow: 0 0 8px #efefd6;
 }
-
 
 .term {
 	width: 8%;
@@ -239,5 +248,5 @@ select:hover {
 }
 
 .term-details {
-	visibility: hidden;
+	display: none;
 }

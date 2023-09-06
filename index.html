@@ -17,6 +17,7 @@
 			<input type="radio" name="indicator" id="invoice">
 			<input type="radio" name="indicator" id="rate">
 			<input type="radio" name="indicator" id="business">
+			<input type="radio" name="indicator" id="equipment">
 			<div class="list">
 				<label for="contract" class="contract">
 					<span class="topic">Договор и Акт</span>
@@ -28,7 +29,10 @@
 					<span class="topic">Накладная</span>
 				</label>
 				<label for="business" class="business">
-					<span class="topic">Договор (2)</span>
+					<span class="topic">Договор (юр. лицо)</span>
+				</label>
+				<label for="equipment" class="equipment">
+					<span class="topic">Комплектация</span>
 				</label>
 				<div class="indicator"></div>
 			</div>
@@ -45,7 +49,7 @@
 	
 						<input type="text" class="input-info" id="input-tel" placeholder="Номер телефона" maxlength="30" required>
 	          <br>
-						<input type="text" id="price" placeholder="Сумма, грн" maxlength="6" oninput="num2str(this.value, 'price-words')" required>
+						<input type="text" id="price" placeholder="Сумма, грн" maxlength="7" oninput="num2str(this.value, 'price-words')" required>
 						
 						<div class="price-words" id="price-words">[сумма договора прописью]</div>						
 						
@@ -103,16 +107,10 @@
 					</div>
 				</form>
 
-				<div class="invoice text">
-					<p>Minus vel consequatur, quae delectus ipsa ut architecto totam officia, laborum repudiandae eius unde eligendi atque ipsam.</p>
-				</div>
-				<div class="rate text">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. .</p>
-				</div>
-				<div class="business text">
-					<p>Laborum repudiandae eius unde eligendi atque ipsam.</p>
-				</div>
-
+				<div class="invoice text">Скоро..</div>
+				<div class="rate text">Скоро..</div>
+				<div class="business text">Скоро..</div>
+				<div class="equipment text">Комплектация</div>
 			</div>
 		</div>
 	</div>

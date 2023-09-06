@@ -42,13 +42,13 @@ priceContract.addEventListener("input", () => {
 
 select.addEventListener('change', function handleChange(event) {
 	if (select.options[select.selectedIndex].value == 'value1') {
-		termDetails.style.visibility = "hidden";
+		termDetails.style.display = "none";
 	} else {		
 		if (priceContract.value === '0' || priceContract.value === '') {
 			alert("Сумма заказа не указана!");
 			select.value = 'value1';
 		} else {
-			termDetails.style.visibility = "visible";
+			termDetails.style.display = "block";
 			datePay.value = yearPay+"-"+monthPay+"-"+dayOfDatePay;
 			calcPayContract();
 		}		
