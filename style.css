@@ -20,16 +20,16 @@ body {
 	width: 65%;
 	height: 610px;
 	margin: 5px;
-	padding: 10px;
 	border-radius: 12px;
 	background-color: #27272b;
 }
 
 .container .main-title {
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: 400;
-	margin-bottom: 10px;
+	margin: 10px;
 	color: #efefef;
+	text-align: center;
 }
 
 .container .content {
@@ -41,22 +41,23 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	width: 30%;
+	width: 25%;
 	height: 100%;
-	margin-right: 20px;
 	background-color: #2c2c31;
-	border-radius: 10px;
+	border-radius: 5px;
+	margin: 0 15px;
 }
 
 .content .list label {
-	height: 50px;
+	display: flex;
+	align-items: center;
+	height: 40px;
 	border-radius: 10px;
 	line-height: 60px;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
 	cursor: pointer;
 	padding-left: 25px;
-	color: #efefef;
 	z-index: 12;
 	transition: all 0.4s ease;
 }
@@ -75,7 +76,7 @@ body {
 
 .container .indicator {
 	position: absolute;
-	height: 60px;
+	height: 40px;
 	width: 100%;
 	background: #efefef;
 	top: 0;
@@ -89,19 +90,19 @@ body {
 }
 
 #invoice:checked ~ .list .indicator {
-	top: 50px;
+	top: 40px;
 }
 
 #rate:checked ~ .list .indicator {
-	top: 100px;
+	top: 80px;
 }
 
 #business:checked ~ .list .indicator {
-	top: 150px;
+	top: 120px;
 }
 
 #equipment:checked ~ .list .indicator {
-	top: 200px;
+	top: 160px;
 }
 
 .container input[type="radio"] {
@@ -138,46 +139,90 @@ body {
 	text-align: justify;
 }
 
-.content .text-content .title {
-	font-size: 16px;
-	font-weight: 400;
-	margin-bottom: 10px;
+.contract .contract_info {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+	width: 95%;		
 }
 
-.input-info {
-	width: 65%;
-}
-
-input{
-	margin-bottom: 6px;
-	font-size: 14px;
-	padding: 5px;
-	border-width: 0 0 1px 0;
-	border-style: solid;
-	border-color: #efefef;
-	background: transparent;
-	color: #efefef;
+.contract_info .contract_index,
+.contract_info .calendar {
+	width: 32%;
+	margin: 0 0 5px 5px;
+	padding: 10px;
+	background-color: #404040;
+	border-radius: 3px;
 	outline: none;
+	border: none;
+	color: #efefef;
+	font-size: 14px;
 }
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.contract .client_info {
+	display: flex;
+	flex-direction: column;
+	width: 95%;	
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+.info {
+	margin: 0 0 5px 5px;
+	padding: 10px;
+	background-color: #404040;
+	border-radius: 3px;
+	outline: none;
+	border: none;
+	color: #efefef;
+	font-size: 14px;
 }
 
-.price-words {
-	margin-bottom: 10px;
+.contract .price_info {
+	display: flex;
+	flex-direction: column;	
+	justify-content: flex-start;
+	gap: 10px;
+	width: 95%;	
+}
+
+.price_info .contract_price {
+	width: 31%;
+	margin: 5px 0 5px 5px;
+	padding: 10px;
+	background-color: #404040;
+	border-radius: 3px;
+	outline: none;
+	border: none;
+	color: #efefef;
+	font-size: 14px;
+}
+
+.price_info .price_words {
 	font-style: italic;
-	max-width: 95%;
 	text-align: left;
 	font-size: 14px;
+	margin: 0 0 5px 5px;
+}
+
+.product_info .product_select {
+	width: 31%;
+	margin: 5px 0 5px 5px;
+	padding: 10px;
+	background-color: #404040;
+	border-radius: 3px;
+	outline: none;
+	border: none;
+	color: #efefef;
+	font-size: 14px;
+}
+
+.product_info .product_select:focus {
+	outline: #efefd6;
+}
+
+.product_info .product_select:hover {
+	cursor: pointer;
+	box-shadow: 0 0 8px #efefd6;
 }
 
 button {
@@ -200,28 +245,6 @@ button:hover {
 
 button:active {
 	box-shadow: none;
-}
-
-select {
-	height: 30px;
-	width: 45%;
-	margin-bottom: 15px;
-	border-radius: 8px;
-	font-size: 14px;
-	padding: 5px;
-	border: 1px solid #202020;
-	background-color: #333333;
-	color: #efefef;
-
-}
-
-select:focus {
-	outline: #efefd6;
-}
-
-select:hover {
-	cursor: pointer;
-	box-shadow: 0 0 8px #efefd6;
 }
 
 .term {

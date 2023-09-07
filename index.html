@@ -36,28 +36,35 @@
 				</label>
 				<div class="indicator"></div>
 			</div>
+
 			<div class="text-content">
 				<form autocomplete="off">
 					<div class="contract text">
-						<input type="text" id="index-contract" maxlength="10" placeholder="Номер договора" autofocus required>
-	
-						<span>от</span> <input type="date" class="input date" id="myDate">
-	
-						<input type="text" class="input-info" id="input-name" placeholder="ФИО" maxlength="50" required>
-	
-						<input type="text" class="input-info" id="input-adress" placeholder="Адрес" maxlength="50" required>
-	
-						<input type="text" class="input-info" id="input-tel" placeholder="Номер телефона" maxlength="30" required>
-	          <br>
-						<input type="text" id="price" placeholder="Сумма, грн" maxlength="7" oninput="num2str(this.value, 'price-words')" required>
+
+						<div class="contract_info">
+							<input type="text" class="contract_index" maxlength="28" placeholder="Номер договора" autofocus required>
+							<span>от</span> 
+							<input type="date" class="calendar" id="myDate">
+						</div>
 						
-						<div class="price-words" id="price-words">[сумма договора прописью]</div>						
+						<div class="client_info">
+							<input type="text" class="client_name info" placeholder="ФИО" maxlength="50" required>
+							<input type="text" class="client_adress info" placeholder="Адрес" maxlength="50" required>
+							<input type="text" class="client_tel info" placeholder="Номер телефона" maxlength="30" required>
+						</div>
+
+						<div class="price_info">
+							<input type="text" id="price" class="contract_price" placeholder="Сумма, грн" maxlength="7" oninput="num2str(this.value, 'price-words')" required>						
+							<div id="price-words" class="price_words">[сумма договора прописью]</div>
+						</div>											
 						
-						<select id="product">
-							<option value="value1" selected>Вiкна ПВХ</option>
-							<option value="value2">Ролети</option>
-							<option value="value3">Дверi</option>
-						</select>
+						<div class="product_info">
+							<select id="product" class="product_select">
+								<option value="value1" selected>Вiкна ПВХ</option>
+								<option value="value2">Ролети</option>
+								<option value="value3">Дверi</option>
+							</select>
+						</div>						
 
 						<div>Срок<input type="text" class="term" value="5" maxlength="2"> рабочих дней</div>
 	
@@ -73,7 +80,6 @@
 							<div class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</div>
 						</div>
 
-						<br>
 						<select>
 							<option value="1" selected>Краснянская Н.Е.</option>
 							<option value="2">Праслова Л.Е.</option>
