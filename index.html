@@ -59,33 +59,39 @@
 						</div>											
 						
 						<div class="product_info">
-							<select id="product" class="product_select">
+							<select class="product_select">
 								<option value="value1" selected>Вiкна ПВХ</option>
 								<option value="value2">Ролети</option>
 								<option value="value3">Дверi</option>
 							</select>
-						</div>						
 
-						<div>Срок<input type="text" class="term" value="5" maxlength="2"> рабочих дней</div>
-	
-						<select id="terms-of-payment">
-							<option value="value1" selected>100% оплата</option>
-							<option value="value2">предоплата</option>
-						</select>
+							<div>Срок<input type="text" class="term_day info" value="5" maxlength="2"> рабочих дней</div>
+						</div>
+
+						<div class="product_select">
+							<select id="terms-of-payment" class="terms_select">
+								<option value="value1" selected>100% оплата</option>
+								<option value="value2">предоплата</option>
+							</select>
+						</div>
 						
-						<div class="term-details" id="term-details">
+						<div id="term-details" class="term-details">
 							<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onkeyup="num2str(this.value, 'price-words-second-pay')" required>
 							<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" disabled>
 							<div>внести<input type="date" id="date-pay"></div>
 							<div class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</div>
 						</div>
 
-						<select>
-							<option value="1" selected>Краснянская Н.Е.</option>
-							<option value="2">Праслова Л.Е.</option>
-						</select>
-						<label for="chkbx-without-install">Без монтажа</label>
-						<input type="checkbox" id="chkbx-without-install" onclick="checkWithoutInstall()">										
+						<div class="salon_info">
+							<select class="salon_select">
+								<option value="1" selected>Краснянская Н.Е.</option>
+								<option value="2">Праслова Л.Е.</option>
+							</select>
+
+							<label for="chkbx-without-install">Без монтажа</label>
+							<input type="checkbox" id="chkbx-without-install" onclick="checkWithoutInstall()">
+						</div>					
+																
 	
 						<div class="buttons">
 							<div class="buttons-contract">
