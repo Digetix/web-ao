@@ -42,23 +42,23 @@
 					<div class="contract text">
 
 						<div class="contract_info">
-							<input type="text" class="contract_index" maxlength="28" placeholder="Номер договора" autofocus required>
+							<input type="text" class="contract_index info" maxlength="28" placeholder="Номер договора" autofocus required>
 							<span>от</span> 
-							<input type="date" class="calendar" id="myDate">
+							<input type="date" class="calendar info" id="myDate">
 						</div>
 						
-						<div class="client_info">
+						<div class="client_info wrapper">
 							<input type="text" class="client_name info" placeholder="ФИО" maxlength="50" required>
 							<input type="text" class="client_adress info" placeholder="Адрес" maxlength="50" required>
 							<input type="text" class="client_tel info" placeholder="Номер телефона" maxlength="30" required>
 						</div>
 
-						<div class="price_info">
-							<input type="text" id="price" class="contract_price" placeholder="Сумма, грн" maxlength="7" oninput="num2str(this.value, 'price-words')" required>						
+						<div class="price_info wrapper">
+							<input type="text" id="price" class="contract_price info" placeholder="Сумма, грн" maxlength="7" oninput="num2str(this.value, 'price-words')" required>						
 							<div id="price-words" class="price_words">[сумма договора прописью]</div>
 						</div>											
 						
-						<div class="product_info">
+						<div class="product_info wrapper">
 							<select class="product_select">
 								<option value="value1" selected>Вiкна ПВХ</option>
 								<option value="value2">Ролети</option>
@@ -68,21 +68,21 @@
 							<div>Срок<input type="text" class="term_day info" value="5" maxlength="2"> рабочих дней</div>
 						</div>
 
-						<div class="product_select">
+						<div class="product_select wrapper">
 							<select id="terms-of-payment" class="terms_select">
 								<option value="value1" selected>100% оплата</option>
 								<option value="value2">предоплата</option>
 							</select>
 						</div>
 						
-						<div id="term-details" class="term-details">
-							<input type="text" id="price-pay-contract" placeholder="Сумма оплаты, грн" maxlength="6" onkeyup="num2str(this.value, 'price-words-second-pay')" required>
-							<input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" maxlength="6" disabled>
-							<div>внести<input type="date" id="date-pay"></div>
-							<div class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</div>
-						</div>
+						<div id="term-details" class="term-details wrapper">
+							<input type="text" id="price-pay-contract" class="term_details_pay info" placeholder="Сумма оплаты, грн" maxlength="7" onkeyup="num2str(this.value, 'price-words-second-pay')" required>
+							<!-- <input type="text" placeholder="Остаток, грн" id="price-pay-contract-add" class="term_details_pay_add info" maxlength="7" disabled> -->
+							<!-- <div class="price-words" id="price-words-second-pay">[сумма оплаты прописью]</div> -->
+							<div>внести<input type="date" id="date-pay" class="date_pay_add info"></div>
+						</div>												
 
-						<div class="salon_info">
+						<div class="salon_info wrapper">
 							<select class="salon_select">
 								<option value="1" selected>Краснянская Н.Е.</option>
 								<option value="2">Праслова Л.Е.</option>
@@ -90,10 +90,9 @@
 
 							<label for="chkbx-without-install">Без монтажа</label>
 							<input type="checkbox" id="chkbx-without-install" onclick="checkWithoutInstall()">
-						</div>					
-																
+						</div>											
 	
-						<div class="buttons">
+						<div class="buttons wrapper">
 							<div class="buttons-contract">
 								<button id="button-save-contract">Сохранить Договор</button>
 								<select>
@@ -108,7 +107,7 @@
 							</div>
 							<div class="buttons-act" id="buttons-act">
 								<button id="button-save-act">Сохранить Акт</button>
-								<button>Акт (пустой)</button>
+								<button>Акт (10 копий)</button>
 								<select>
 									<option value="2" selected>2 копии</option>
 									<option value="1">1 копия</option>

@@ -31,6 +31,7 @@ dayOfDatePay = dateAddPay.getDate();
 			if (monthPay<10) monthPay='0'+monthPay;
 		yearPay = dateAddPay.getFullYear();
 
+
 function calcPayContract() {	
 	pricePay.value = Math.ceil((priceContract.value / 100) * 80);
 	pricePayAdd.value = priceContract.value - pricePay.value;	
@@ -48,7 +49,10 @@ select.addEventListener('change', function handleChange(event) {
 			alert("Сумма заказа не указана!");
 			select.value = 'value1';
 		} else {
-			termDetails.style.display = "block";
+			termDetails.style.display = "flex";
+			termDetails.style.alignItems = "center";
+			termDetails.style.justifyContent = "flex-start";
+			termDetails.style.columnGap = "20px";
 			datePay.value = yearPay+"-"+monthPay+"-"+dayOfDatePay;
 			calcPayContract();
 		}		
@@ -75,7 +79,7 @@ function checkWithoutInstall() {
 		saveActBtn.style.visibility = "visible";
 		btnPrintContract.textContent = 'Договор';
 	}
-}
+};
 
 
 

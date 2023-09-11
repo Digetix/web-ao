@@ -139,6 +139,9 @@ body {
 	text-align: justify;
 }
 
+.wrapper {
+	margin-top: 5px;
+}
 .contract .contract_info {
 	display: flex;
 	justify-content: flex-start;
@@ -175,6 +178,15 @@ body {
 	border: none;
 	color: #efefef;
 	font-size: 14px;
+}
+
+.info:hover {
+	box-shadow: 0 0 4px #efefd6;
+}
+
+.info:disabled {
+	background-color: #535353;
+	box-shadow: none;
 }
 
 .contract .price_info {
