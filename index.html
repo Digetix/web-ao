@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script src="js/app.js" defer></script>
 	<script src="js/numberToString.js" defer></script>
 	<title>Печать документов</title>
@@ -106,7 +106,7 @@
 									<option value="1" selected>1-ая страница</option>
 									<option value="2">2-ая страница</option>
 								</select>
-								<button id="button-print-contract" class="btn"><span class="material-symbols-outlined">print<span>Договор</button>
+								<button id="button-print-contract" class="btn" onclick="printContract()"><span class="material-symbols-outlined">print</span>Договор </button>
 							</div>
 							<div class="buttons_act" id="buttons-act">
 								<button id="button-save-act" class="btn"><span class="material-symbols-outlined">download</span>Акт</button>
