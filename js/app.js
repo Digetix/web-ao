@@ -1,6 +1,4 @@
 
-import { jsPDF } from "jspdf";
-
 const select = document.getElementById("terms-of-payment");
 			termDetails = document.getElementById("term-details");
 			dateContract = document.getElementById("myDate");
@@ -73,7 +71,6 @@ pricePay.addEventListener("input", () => {
 	}	
 });
 
-
 function checkWithoutInstall() {
 	if (checkBox.checked == true){
 		saveActBtn.style.visibility = "hidden";
@@ -82,14 +79,6 @@ function checkWithoutInstall() {
 		saveActBtn.style.visibility = "visible";
 		btnPrintContract.textContent = 'Договор';
 	}
-};
-
-function printContract(){
-		// Default export is a4 paper, portrait, using millimeters for units
-	var doc = new jsPDF();
-
-	doc.text("Hello world!", 10, 10);
-	doc.save("a4.pdf");
 };
 
 
